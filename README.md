@@ -18,19 +18,49 @@ Docker images of various linter.
 
 ## Tags
 
-Supported tags and respective Dockerfile links.
+Supported tags.
 
-- docker, docker-lint (docker/Dockerfile)
-- json, json-lint (json/Dockerfile)
-- puppet, puppet-lint (puppet/Dockerfile)
-- python, pylint (puppet/Dockerfile)
-- ruby, rubocop (ruby/Dockerfile)
-- shell, shellcheck (shell/Dockerfile)
-- yaml, yaml-lint (yam/Dockerfile)
+- docker, dockerlint, docker-lint
+- json, jsonlint, json-lint
+- puppet, puppet-lint
+- python, pylint
+- ruby, rubocop
+- shell, shellcheck
+- yaml, yaml-lint
 
 ## Usage
 
-Soon :)
+```bash
+docker run -it -v ${PWD}:/usr/src:ro vpgrp/linter:<TAG> <OPTIONS> /usr/src
+```
+
+### Docker
+
+Read [here](https://github.com/redcoolbeans/dockerlint).
+
+### JSON
+
+Read [here](https://github.com/pagerduty/jsonlint).
+
+### Puppet
+
+Read [here](https://github.com/rodjek/puppet-lint).
+
+### Python
+
+Read [here](https://github.com/pycqa/pylint).
+
+### Ruby
+
+Read [here](https://github.com/bbatsov/rubocop).
+
+### Shell
+
+Read [here](https://github.com/koalaman/shellcheck).
+
+### YAML
+
+Read [here](https://github.com/pryz/yaml-lint).
 
 ## Limitations
 
