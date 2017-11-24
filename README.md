@@ -64,11 +64,11 @@ Read [here](https://github.com/pryz/yaml-lint).
 
 ## Limitations
 
-Soon :)
+Currently no limitations.
 
 ## Development
 
-Feel free to contribute on GitHub.
+Please read carefully CONTRIBUTING.md before making a merge request.
 
 ## Miscellaneous
 
