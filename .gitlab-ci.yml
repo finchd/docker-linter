@@ -33,7 +33,7 @@ docker-lint:
     - dockerlint python/Dockerfile
     - dockerlint ruby/Dockerfile
     - dockerlint shell/Dockerfile
-    - dockerlint yam/Dockerfile
+    - dockerlint yaml/Dockerfile
 
 # docker
 docker-build:
