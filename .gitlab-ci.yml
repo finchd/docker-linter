@@ -1,0 +1,55 @@
+---
+stages:
+  - commit
+  - syntax
+  - docker
+
+# commit
+git-history:
+  stage: commit
+  script:
+    - >
+      bash <(curl -s
+      https://gitlab.com/yue-script/checks/raw/master/check_git_history.sh)
+
+lines-length:
+  stage: commit
+  script:
+    - >
+      bash <(curl -s
+      https://gitlab.com/yue-script/checks/raw/master/check_lines_length.sh)
+
+# syntax
+docker-lint:
+  stage: syntax
+  image: vpgrp/nodejs:latest
+  before_script:
+    - npm install -g dockerlint
+  script:
+    - dockerlint docker/Dockerfile
+    - dockerlint golang/Dockerfile
+    - dockerlint json/Dockerfile
+    - dockerlint puppet/Dockerfile
+    - dockerlint python/Dockerfile
+    - dockerlint ruby/Dockerfile
+    - dockerlint shell/Dockerfile
+    - dockerlint yam/Dockerfile
+
+# docker
+docker-build:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm docker
+    - docker build --rm golang
+    - docker build --rm json
+    - docker build --rm puppet
+    - docker build --rm python
+    - docker build --rm ruby
+    - docker build --rm shell
+    - docker build --rm yaml
+# EOF
