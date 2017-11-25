@@ -21,7 +21,8 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-get install -qq -y \
       build-essential \
-      ruby-dev && \
+      ruby-dev \
+      zlib1g-dev && \
     apt-clean
 
 RUN gem install metadata-json-lint --no-document --quiet && \
