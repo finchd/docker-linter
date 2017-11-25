@@ -19,9 +19,14 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
+    apt-get install -qq -y \
+      build-essential \
+      ruby-dev && \
     apt-clean
 
-RUN gem install puppet-lint --no-document --quiet
+RUN gem install metadata-json-lint --no-document --quiet && \
+    gem install puppet-lint --no-document --quiet && \
+    gem install rails-erb-lint --no-document --quiet
 
 CMD [ "/usr/bin/puppet-lint" ]
 # EOF
