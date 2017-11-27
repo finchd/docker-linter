@@ -39,7 +39,7 @@ docker-lint:
     - dockerlint yaml/Dockerfile
 
 # docker
-docker-build:
+build-docker:
   stage: docker
   image: docker:latest
   services:
@@ -48,12 +48,84 @@ docker-build:
     DOCKER_DRIVER: overlay
   script:
     - docker build --rm docker
+
+build-golang:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm golang
+
+build-json:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm json
+
+build-php:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm php
+
+build-puppet:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm puppet
+
+build-python:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm python
+
+build-ruby:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm ruby
+
+build-shell:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm shell
+
+build-yaml:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
     - docker build --rm yaml
 # EOF
