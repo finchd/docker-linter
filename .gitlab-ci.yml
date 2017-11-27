@@ -31,6 +31,7 @@ docker-lint:
     - dockerlint docker/Dockerfile
     - dockerlint golang/Dockerfile
     - dockerlint json/Dockerfile
+    - dockerlint php/Dockerfile
     - dockerlint puppet/Dockerfile
     - dockerlint python/Dockerfile
     - dockerlint ruby/Dockerfile
@@ -49,6 +50,7 @@ docker-build:
     - docker build --rm docker
     - docker build --rm golang
     - docker build --rm json
+    - docker build --rm php
     - docker build --rm puppet
     - docker build --rm python
     - docker build --rm ruby
