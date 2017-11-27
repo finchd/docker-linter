@@ -28,6 +28,7 @@ docker-lint:
   before_script:
     - npm install -g dockerlint
   script:
+    - dockerlint ansible/Dockerfile
     - dockerlint docker/Dockerfile
     - dockerlint golang/Dockerfile
     - dockerlint json/Dockerfile
@@ -39,6 +40,16 @@ docker-lint:
     - dockerlint yaml/Dockerfile
 
 # docker
+build-ansible:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm ansible
+
 build-docker:
   stage: docker
   image: docker:latest

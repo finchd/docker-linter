@@ -20,8 +20,11 @@ Docker images of various linter.
 
 Supported tags.
 
+- ansible, ansible-lint
 - docker, dockerlint, docker-lint
+- golang, golint, go-lint
 - json, jsonlint, json-lint
+- php, phplint, php-lint
 - puppet, puppet-lint
 - python, pylint
 - ruby, rubocop
@@ -34,6 +37,10 @@ Supported tags.
 docker run -it -v ${PWD}:/usr/src:ro vpgrp/linter:<TAG> <OPTIONS> /usr/src
 ```
 
+### Ansible
+
+Read [here](https://github.com/willthames/ansible-lint).
+
 ### Docker
 
 Read [here](https://github.com/redcoolbeans/dockerlint).
@@ -41,6 +48,10 @@ Read [here](https://github.com/redcoolbeans/dockerlint).
 ### JSON
 
 Read [here](https://github.com/pagerduty/jsonlint).
+
+### PHP
+
+Read [here](https://github.com/overtrue/phplint).
 
 ### Puppet
 
