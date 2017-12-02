@@ -24,6 +24,7 @@ Supported tags.
 - docker, dockerlint, docker-lint
 - golang, golint, go-lint
 - json, jsonlint, json-lint
+- markdown, mdl, markdownlint, markdown-lint
 - php, phplint, php-lint
 - puppet, puppet-lint
 - python, pylint
@@ -48,6 +49,10 @@ Read [here](https://github.com/redcoolbeans/dockerlint).
 ### JSON
 
 Read [here](https://github.com/pagerduty/jsonlint).
+
+### Markdown
+
+Read [here](https://github.com/markdownlint/markdownlint).
 
 ### PHP
 

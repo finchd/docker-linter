@@ -32,6 +32,7 @@ docker-lint:
     - dockerlint docker/Dockerfile
     - dockerlint golang/Dockerfile
     - dockerlint json/Dockerfile
+    - dockerlint markdown/Dockerfile
     - dockerlint php/Dockerfile
     - dockerlint puppet/Dockerfile
     - dockerlint python/Dockerfile
@@ -79,6 +80,16 @@ build-json:
     DOCKER_DRIVER: overlay
   script:
     - docker build --rm json
+
+build-markdown:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm markdown
 
 build-php:
   stage: docker
