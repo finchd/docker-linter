@@ -26,6 +26,7 @@ Supported tags.
 - json, jsonlint, json-lint
 - markdown, mdl, markdownlint, markdown-lint
 - php, phplint, php-lint
+- prometheus, promtool
 - puppet, puppet-lint
 - python, pylint
 - ruby, rubocop
@@ -57,6 +58,10 @@ Read [here](https://github.com/markdownlint/markdownlint).
 ### PHP
 
 Read [here](https://github.com/overtrue/phplint).
+
+### Prometheus
+
+Read [here](https://github.com/prometheus/prometheus).
 
 ### Puppet
 
