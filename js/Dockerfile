@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM vpgrp/python:latest
+FROM vpgrp/nodejs:latest
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     TZ="Europe/Amsterdam"
@@ -21,9 +21,8 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-clean
 
-RUN pip install pylint && \
-    ln -s /usr/bin/pylint /usr/bin/py-lint && \
-    ln -s /usr/bin/pylint /usr/bin/python-lint
+RUN npm install --global jslint && \
+    ln -s /usr/bin/jslint /usr/bin/js-lint
 
-CMD [ "/usr/bin/pylint" ]
+CMD [ '/usr/bin/jslint' ]
 # EOF

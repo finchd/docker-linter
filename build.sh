@@ -10,6 +10,7 @@ fi
 docker build --force-rm --tag ${DOCKER_USER}/linter:ansible    ansible
 docker build --force-rm --tag ${DOCKER_USER}/linter:docker     docker
 docker build --force-rm --tag ${DOCKER_USER}/linter:golang     golang
+docker build --force-rm --tag ${DOCKER_USER}/linter:js         js
 docker build --force-rm --tag ${DOCKER_USER}/linter:json       json
 docker build --force-rm --tag ${DOCKER_USER}/linter:markdown   markdown
 docker build --force-rm --tag ${DOCKER_USER}/linter:php        php

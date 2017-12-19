@@ -31,6 +31,7 @@ docker-lint:
     - dockerlint ansible/Dockerfile
     - dockerlint docker/Dockerfile
     - dockerlint golang/Dockerfile
+    - dockerlint js/Dockerfile
     - dockerlint json/Dockerfile
     - dockerlint markdown/Dockerfile
     - dockerlint php/Dockerfile
@@ -71,6 +72,16 @@ build-golang:
     DOCKER_DRIVER: overlay
   script:
     - docker build --rm golang
+
+build-js:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm js
 
 build-json:
   stage: docker

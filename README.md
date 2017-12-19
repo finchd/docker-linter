@@ -23,6 +23,7 @@ Supported tags.
 - ansible, ansible-lint
 - docker, dockerlint, docker-lint
 - golang, golint, go-lint
+- js, jslint, js-lint
 - json, jsonlint, json-lint
 - markdown, mdl, markdownlint, markdown-lint
 - php, phplint, php-lint
@@ -46,6 +47,10 @@ Read [here](https://github.com/willthames/ansible-lint).
 ### Docker
 
 Read [here](https://github.com/redcoolbeans/dockerlint).
+
+### JS
+
+Read [here](https://github.com/reid/node-jslint).
 
 ### JSON
 
