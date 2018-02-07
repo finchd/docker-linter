@@ -21,9 +21,12 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-clean
 
-RUN pip install pylint && \
+RUN pip install pylama && \
+    pip install pylama_pylint && \
+    pip install pylint && \
+    pip install radon && \
     ln -s /usr/bin/pylint /usr/bin/py-lint && \
     ln -s /usr/bin/pylint /usr/bin/python-lint
-RUN pip install pylama radon pylama_pylint
+
 CMD [ "/usr/bin/pylint" ]
 # EOF

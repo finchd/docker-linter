@@ -24,9 +24,7 @@ lines-length:
 # syntax
 docker-lint:
   stage: syntax
-  image: vpgrp/nodejs:latest
-  before_script:
-    - npm install -g dockerlint
+  image: vpgrp/linter:docker
   script:
     - dockerlint ansible/Dockerfile
     - dockerlint docker/Dockerfile
