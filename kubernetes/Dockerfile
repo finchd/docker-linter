@@ -28,7 +28,5 @@ RUN curl -fsSLO "${KUBEVAL_URL}/${KUBEVAL_VERSION}/kubeval-linux-amd64.tar.gz" &
     tar xzf "kubeval-linux-amd64.tar.gz" && \
     ln -s /usr/local/bin/kubeval /usr/bin/kubeval
 
-ENTRYPOINT [ "/usr/bin/kubeval" ]
-
-CMD [ "--version" ]
+CMD [ "/usr/bin/kubeval", "--version" ]
 # EOF

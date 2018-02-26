@@ -24,5 +24,5 @@ RUN apt-get update  -qq && \
 RUN npm install --global jslint && \
     ln -s /usr/bin/jslint /usr/bin/js-lint
 
-CMD [ "/usr/bin/jslint" ]
+CMD [ "/usr/bin/js-lint", "--version" ]
 # EOF

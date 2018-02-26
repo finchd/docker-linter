@@ -21,7 +21,8 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-clean
 
-RUN gem install rubocop --document --quiet
+RUN gem install rubocop --document --quiet && \
+    ln -s /usr/local/bin/rubocop /usr/bin/rubocop
 
-CMD [ "/usr/bin/rubocop" ]
+CMD [ "/usr/bin/rubocop", "--version" ]
 # EOF

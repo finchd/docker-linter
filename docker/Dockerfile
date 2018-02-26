@@ -24,5 +24,5 @@ RUN apt-get update  -qq && \
 RUN npm install --global dockerlint && \
     ln -s /usr/bin/dockerlint /usr/bin/docker-lint
 
-CMD [ "/usr/bin/docker-lint" ]
+CMD [ "/usr/bin/docker-lint", "-h" ]
 # EOF

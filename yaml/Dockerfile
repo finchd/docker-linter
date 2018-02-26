@@ -21,7 +21,8 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-clean
 
-RUN gem install yaml-lint --no-document --quiet
+RUN gem install yaml-lint --no-document --quiet && \
+    ln -s /usr/local/bin/yaml-lint /usr/bin/yaml-lint
 
-CMD [ "/usr/bin/yaml-lint" ]
+CMD [ "/usr/bin/yaml-lint", "-h" ]
 # EOF
