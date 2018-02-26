@@ -21,5 +21,5 @@ RUN gem install mdl --no-document --quiet && \
     ln -s /usr/local/bin/mdl /usr/bin/mdl && \
     ln -s /usr/local/bin/mdl /usr/bin/markdown-lint
 
-CMD [ "/usr/bin/markdown-lint", "--help" ]
+CMD [ "/usr/bin/markdown-lint", "--version" ]
 # EOF

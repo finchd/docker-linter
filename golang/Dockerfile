@@ -20,5 +20,5 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 RUN go get -u github.com/golang/lint/golint && \
     ln -s /go/bin/golint /usr/bin/go-lint
 
-CMD [ "/usr/bin/go-lint" ]
+CMD [ "/usr/bin/go-lint", "-h" ]
 # EOF

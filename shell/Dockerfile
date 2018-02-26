@@ -23,5 +23,5 @@ RUN apt-get update  -qq && \
       shellcheck && \
     apt-clean
 
-CMD [ "/usr/bin/shellcheck" ]
+CMD [ "/usr/bin/shellcheck", "--version" ]
 # EOF

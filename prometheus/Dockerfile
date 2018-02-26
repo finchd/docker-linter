@@ -20,5 +20,5 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 RUN go get -u github.com/prometheus/prometheus/cmd/promtool && \
     ln -s /go/bin/promtool /usr/bin/promtool
 
-CMD [ "/usr/bin/promtool", "--help" ]
+CMD [ "/usr/bin/promtool", "--version" ]
 # EOF

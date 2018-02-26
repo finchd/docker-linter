@@ -25,8 +25,8 @@ RUN pip install pylama && \
     pip install pylama_pylint && \
     pip install pylint && \
     pip install radon && \
-    ln -s /usr/bin/pylint /usr/bin/py-lint && \
-    ln -s /usr/bin/pylint /usr/bin/python-lint
+    ln -s /usr/local/bin/pylint /usr/bin/py-lint && \
+    ln -s /usr/local/bin/pylint /usr/bin/python-lint
 
-CMD [ "/usr/bin/pylint" ]
+CMD [ "/usr/bin/python-lint", "--version" ]
 # EOF

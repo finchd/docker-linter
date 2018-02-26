@@ -27,7 +27,8 @@ RUN apt-get update  -qq && \
 
 RUN gem install metadata-json-lint --no-document --quiet && \
     gem install puppet-lint --no-document --quiet && \
-    gem install rails-erb-lint --no-document --quiet
+    gem install rails-erb-lint --no-document --quiet && \
+    ln -s /usr/local/bin/puppet-lint /usr/bin/puppet-lint
 
-CMD [ "/usr/bin/puppet-lint" ]
+CMD [ "/usr/bin/puppet-lint", "--version" ]
 # EOF

@@ -27,5 +27,5 @@ RUN apt-get update  -qq && \
 RUN gem install jsonlint --no-document --quiet && \
     ln -s /usr/local/bin/jsonlint /usr/bin/json-lint
 
-CMD [ "/usr/bin/json-lint" ]
+CMD [ "/usr/bin/json-lint", "--version" ]
 # EOF

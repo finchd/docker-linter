@@ -1,26 +1,18 @@
 #!/bin/bash
 
-set -u
+set -ex
 
-if [[ -n ${1} ]]
-then
-    DOCKER_USER=${1}
-else
-    DOCKER_USER=${USER}
+DOCKER_ARGS="--force-rm"
+DOCKER_HUB_USER=${1-vpgrp}
+
+type docker &>/dev/null || { echo "You need docker CLI to build images."; exit 1; }
+
+if [[ $(pgrep -xc pulsesvc) > 0 ]]; then
+    DOCKER_ARGS="${DOCKER_ARGS} --network host"
 fi
 
-docker build --force-rm --tag ${DOCKER_USER}/linter:ansible    ansible
-docker build --force-rm --tag ${DOCKER_USER}/linter:docker     docker
-docker build --force-rm --tag ${DOCKER_USER}/linter:golang     golang
-docker build --force-rm --tag ${DOCKER_USER}/linter:js         js
-docker build --force-rm --tag ${DOCKER_USER}/linter:json       json
-docker build --force-rm --tag ${DOCKER_USER}/linter:kubernetes kubernetes
-docker build --force-rm --tag ${DOCKER_USER}/linter:markdown   markdown
-docker build --force-rm --tag ${DOCKER_USER}/linter:php        php
-docker build --force-rm --tag ${DOCKER_USER}/linter:prometheus prometheus
-docker build --force-rm --tag ${DOCKER_USER}/linter:puppet     puppet
-docker build --force-rm --tag ${DOCKER_USER}/linter:python     python
-docker build --force-rm --tag ${DOCKER_USER}/linter:ruby       ruby
-docker build --force-rm --tag ${DOCKER_USER}/linter:shell      shell
-docker build --force-rm --tag ${DOCKER_USER}/linter:yaml       yaml
+
+for buildContext in */; do
+  docker build ${DOCKER_ARGS} -t ${DOCKER_HUB_USER}/linter:${buildContext%%/} ${buildContext}
+done
 # EOF
