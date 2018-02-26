@@ -10,16 +10,12 @@ stages:
 git-history:
   stage: commit
   script:
-    - >
-      bash <(curl -s
-      https://gitlab.com/yue-script/checks/raw/master/check_git_history.sh)
+    - bash <(curl -fsS https://gitlab.com/yue-script/checks/raw/master/check_git_history.sh)
 
 lines-length:
   stage: commit
   script:
-    - >
-      bash <(curl -s
-      https://gitlab.com/yue-script/checks/raw/master/check_lines_length.sh)
+    - bash <(curl -fsS https://gitlab.com/yue-script/checks/raw/master/check_lines_length.sh) 100
 
 # syntax
 docker-lint:
@@ -31,6 +27,7 @@ docker-lint:
     - dockerlint golang/Dockerfile
     - dockerlint js/Dockerfile
     - dockerlint json/Dockerfile
+    - dockerlint kubernetes/Dockerfile
     - dockerlint markdown/Dockerfile
     - dockerlint php/Dockerfile
     - dockerlint prometheus/Dockerfile
@@ -90,6 +87,16 @@ build-json:
     DOCKER_DRIVER: overlay
   script:
     - docker build --rm json
+
+build-kubernetes:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm kubernetes
 
 build-markdown:
   stage: docker
