@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM vpgrp/golang:latest
+FROM golang:latest
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     TZ="Europe/Amsterdam"
