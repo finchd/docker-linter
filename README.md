@@ -1,4 +1,8 @@
-# docker-linter ![License][license-img]
+# docker-linter
+
+[![License][license-img]][license-href]
+[![pipeline][pipeline-img]][pipeline-href]
+[![docker][docker-img]][docker-href]
 
 1. [Overview](#overview)
 2. [Description](#description)
@@ -10,7 +14,11 @@
 
 ## Overview
 
-Soon :)
+A linter or lint  refers to tools that analyze source  code to flag programming
+errors,  bugs,  stylistic  errors,  and  suspicious  constructs.  The  term  is
+originated from a Unix utility that examined C language source code.
+
+[wikipedia.org][overview-href]
 
 ## Description
 
@@ -25,6 +33,7 @@ Supported tags.
 - golang, golint, go-lint
 - js, jslint, js-lint
 - json, jsonlint, json-lint
+- kubernetes, k8s, kubeval
 - markdown, mdl, markdownlint, markdown-lint
 - php, phplint, php-lint
 - prometheus, promtool
@@ -37,7 +46,12 @@ Supported tags.
 ## Usage
 
 ```bash
-docker run -it -v ${PWD}:/usr/src:ro vpgrp/linter:<TAG> <OPTIONS> /usr/src
+docker run \
+  --interactive \
+  --tty \
+  --volume ${PWD}:/usr/src:ro \
+  vpgrp/linter:<TAG> \
+  <OPTIONS> /usr/src
 ```
 
 ### Ansible
@@ -55,6 +69,10 @@ Read [here](https://github.com/reid/node-jslint).
 ### JSON
 
 Read [here](https://github.com/pagerduty/jsonlint).
+
+### Kubernetes
+
+Read [here](https://github.com/garethr/kubeval).
 
 ### Markdown
 
@@ -94,7 +112,8 @@ Currently no limitations.
 
 ## Development
 
-Please read carefully CONTRIBUTING.md before making a merge request.
+Please read carefully [CONTRIBUTING.md][contribute-href]  before making a merge
+request.
 
 ## Miscellaneous
 
@@ -108,4 +127,11 @@ Please read carefully CONTRIBUTING.md before making a merge request.
    ╚═(███)═╝
 ```
 
-[license-img]: https://img.shields.io/badge/license-ISC-blue.svg
+[license-img]: https://img.shields.io/badge/license-Apache-blue.svg
+[license-href]: LICENSE
+[pipeline-img]: https://git.vpgrp.io/docker/docker-linter/badges/master/pipeline.svg
+[pipeline-href]: https://git.vpgrp.io/docker/docker-linter/commits/master
+[docker-img]: https://img.shields.io/docker/pulls/linter/nrpe.svg
+[docker-href]: https://hub.docker.com/r/vpgrp/linter/
+[overview-href]: https://en.wikipedia.org/wiki/Lint_(software)
+[contribute-href]: CONTRIBUTING.md
