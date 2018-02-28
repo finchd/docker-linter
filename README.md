@@ -131,7 +131,7 @@ request.
 [license-href]: LICENSE
 [pipeline-img]: https://git.vpgrp.io/docker/docker-linter/badges/master/pipeline.svg
 [pipeline-href]: https://git.vpgrp.io/docker/docker-linter/commits/master
-[docker-img]: https://img.shields.io/docker/pulls/linter/nrpe.svg
+[docker-img]: https://img.shields.io/docker/pulls/docker/linter.svg
 [docker-href]: https://hub.docker.com/r/vpgrp/linter/
 [overview-href]: https://en.wikipedia.org/wiki/Lint_(software)
 [contribute-href]: CONTRIBUTING.md
