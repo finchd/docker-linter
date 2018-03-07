@@ -6,7 +6,7 @@
 
 1. [Overview](#overview)
 2. [Description](#description)
-3. [Tags](#setup)
+3. [Tags](#tags)
 4. [Usage](#usage)
 5. [Limitations](#limitations)
 6. [Development](#development)
