@@ -28,31 +28,24 @@ Docker images of various linter.
 
 Supported tags.
 
-- ansible, ansible-lint
-- docker, dockerlint, docker-lint
-- golang, golint, go-lint
-- js, jslint, js-lint
-- json, jsonlint, json-lint
-- kubernetes, k8s, kubeval
-- markdown, mdl, markdownlint, markdown-lint
-- php, phplint, php-lint
-- prometheus, promtool
-- puppet, puppet-lint
-- python, pylint
-- ruby, rubocop
-- shell, shellcheck
-- yaml, yaml-lint
+- ansible, ansible-lint ([ansible/Dockerfile](ansible/Dockerfile))
+- docker, dockerlint, docker-lint ([docker/Dockerfile](docker/Dockerfile))
+- golang, golint, go-lint ([golang/Dockerfile](golang/Dockerfile))
+- js, jslint, js-lint ([js/Dockerfile](js/Dockerfile))
+- json, jsonlint, json-lint ([json/Dockerfile](json/Dockerfile))
+- kubernetes, k8s, kubeval ([kubernetes/Dockerfile](kubernetes/Dockerfile))
+- markdown, mdl ([markdown/Dockerfile](markdown/Dockerfile))
+- php, phplint, php-lint ([php/Dockerfile](php/Dockerfile))
+- prometheus, promtool ([premetheus/Dockerfile](prometheus/Dockerfile))
+- puppet, puppet-lint ([puppet/Dockerfile](puppet/Dockerfile))
+- python, pylint ([python/Dockerfile](python/Dockerfile))
+- ruby, rubocop ([ruby/Dockerfile](ruby/Dockerfile))
+- shell, shellcheck ([shell/Dockerfile](shell/Dockerfile))
+- yaml, yaml-lint ([yaml/Dockerfile](yaml/Dockerfile))
 
 ## Usage
 
-```bash
-docker run \
-  --interactive \
-  --tty \
-  --volume ${PWD}:/usr/src:ro \
-  vpgrp/linter:<TAG> \
-  <OPTIONS> /usr/src
-```
+Soon :)
 
 ### Ansible
 

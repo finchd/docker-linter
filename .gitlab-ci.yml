@@ -27,20 +27,7 @@ docker-lint:
   stage: syntax
   image: vpgrp/linter:docker
   script:
-    - dockerlint ansible/Dockerfile
-    - dockerlint docker/Dockerfile
-    - dockerlint golang/Dockerfile
-    - dockerlint js/Dockerfile
-    - dockerlint json/Dockerfile
-    - dockerlint kubernetes/Dockerfile
-    - dockerlint markdown/Dockerfile
-    - dockerlint php/Dockerfile
-    - dockerlint prometheus/Dockerfile
-    - dockerlint puppet/Dockerfile
-    - dockerlint python/Dockerfile
-    - dockerlint ruby/Dockerfile
-    - dockerlint shell/Dockerfile
-    - dockerlint yaml/Dockerfile
+    - find . -type f -name "Dockerfile" | xargs -I{} dockerlint {}
 
 # docker
 build-ansible:
