@@ -40,6 +40,16 @@ build-ansible:
   script:
     - docker build --rm ansible
 
+build-css:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
+  script:
+    - docker build --rm css
+
 build-docker:
   stage: docker
   image: docker:latest

@@ -29,6 +29,7 @@ Docker images of various linter.
 Supported tags.
 
 - ansible, ansible-lint ([ansible/Dockerfile](ansible/Dockerfile))
+- css, stylelint, style-lint ([css/Dockerfile](css/Dockerfile))
 - docker, dockerlint, docker-lint ([docker/Dockerfile](docker/Dockerfile))
 - golang, golint, go-lint ([golang/Dockerfile](golang/Dockerfile))
 - js, jslint, js-lint ([js/Dockerfile](js/Dockerfile))
@@ -50,6 +51,10 @@ Soon :)
 ### Ansible
 
 Read [here](https://github.com/willthames/ansible-lint).
+
+### CSS
+
+Read [here](https://github.com/stylelint/stylelint).
 
 ### Docker
 
