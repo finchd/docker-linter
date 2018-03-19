@@ -32,7 +32,7 @@ Supported tags.
 - css, stylelint, style-lint ([css/Dockerfile](css/Dockerfile))
 - docker, dockerlint, docker-lint ([docker/Dockerfile](docker/Dockerfile))
 - golang, golint, go-lint ([golang/Dockerfile](golang/Dockerfile))
-- js, jslint, js-lint ([js/Dockerfile](js/Dockerfile))
+- js, eslint, jslint, js-lint ([js/Dockerfile](js/Dockerfile))
 - json, jsonlint, json-lint ([json/Dockerfile](json/Dockerfile))
 - kubernetes, k8s, kubeval ([kubernetes/Dockerfile](kubernetes/Dockerfile))
 - markdown, mdl ([markdown/Dockerfile](markdown/Dockerfile))
@@ -62,7 +62,8 @@ Read [here](https://github.com/redcoolbeans/dockerlint).
 
 ### JS
 
-Read [here](https://github.com/reid/node-jslint).
+Read [here for eslint](https://eslint.org).
+Read [here for jslint](https://github.com/reid/node-jslint).
 
 ### JSON
 

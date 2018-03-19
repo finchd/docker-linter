@@ -21,8 +21,10 @@ RUN apt-get update  -qq && \
     apt-get upgrade -qq -y && \
     apt-clean
 
-RUN npm install --global jslint && \
+RUN npm install --global \
+      eslint eslint-plugin-import \
+      jslint && \
     ln -s /usr/bin/jslint /usr/bin/js-lint
 
-CMD [ "/usr/bin/js-lint", "--version" ]
+CMD [ "/usr/bin/eslint", "--version" ]
 # EOF
